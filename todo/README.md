@@ -25,11 +25,3 @@ Before you begin, ensure you have met the following requirements:
 - To run backend part navigate to server followed by "npm start"
 
 
-
-
-
-
-
-
-
-
