@@ -43,6 +43,22 @@ app.delete('/delete/:id', (req,res)=>{
     .catch(err => res.json(err))
 })
 
+app.delete('/deleteall/', async(req,res)=>{
+    // const {ids} = req.params;
+    // TodoModel.deleteMany({_id:{$in:ids}})
+    // .then(result => res.json(result))
+    // .catch(err => res.json(err))
+    try{
+    const deleteResult = await TodoModel.deleteMany({done:true});
+    res.json((deleteResult))
+    }
+    catch(err){
+        console.log(err);
+    }
+
+    // catch(err => res.json(err))
+})
+
 app.listen(3001, ()=>{
     console.log("Server is Running")
 })
